@@ -167,10 +167,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
-    persist.audio.dualmic.config=endfire \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=false \
     ro.audio.monitorRotation=true
 
 # drmservice props
@@ -440,6 +436,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Low latency audio buffer size in frames
 PRODUCT_PROPERTY_OVERRIDES += \
     audio_hal.period_size=192
+
+# Set correct voice call audio property values
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.vc_call_vol_steps=6 \
+    persist.audio.dualmic.config=endfire \
+    ro.qc.sdk.audio.fluencetype=fluence \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicecomm=false \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=false
 
 # OEM Unlock reporting
 ADDITIONAL_DEFAULT_PROPERTIES += \
